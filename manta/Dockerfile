@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 # Adding labels for the GitHub Container Registry
 LABEL org.opencontainers.image.title="manta"
 LABEL org.opencontainers.image.description="Container image for the use of Manta: Structural Variant and indel Caller"
-LABEL org.opencontainers.image.version="0.2"
+LABEL org.opencontainers.image.version="latest"
 LABEL org.opencontainers.image.authors="sanaz.iitd@gmail.com"
 LABEL org.opencontainers.image.source=https://github.com/Sanaz01/docker-library
 
