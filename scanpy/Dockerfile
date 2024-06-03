@@ -1,5 +1,5 @@
-# Using the Miniconda base image
-FROM continuumio/miniconda3:24.1.2-0
+# Using Python base image
+FROM python:3.10-slim
 
 # Adding labels for the GitHub Container Registry
 LABEL org.opencontainers.image.title="scanpy"
@@ -8,11 +8,5 @@ LABEL org.opencontainers.image.version="latest"
 LABEL org.opencontainers.image.authors="sanaz.iitd@gmail.com"
 LABEL org.opencontainers.image.source=https://github.com/Sanaz01/docker-library
 
-# Switching from hard-links to copies
-RUN conda config --set always_copy true
-
-# Installing necessary libraries via conda
-RUN conda install anaconda::pandas=2.0.3
-RUN conda install conda-forge::matplotlib=3.8.4
-RUN conda install conda-forge::scanpy=1.10.1
-RUN conda install conda-forge::leidenalg=0.10.2
+# Installing packages via pip
+RUN pip install scanpy==1.10.1 leiden-clustering==0.1.0
